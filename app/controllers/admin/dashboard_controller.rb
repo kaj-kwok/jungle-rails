@@ -3,10 +3,7 @@ class Admin::DashboardController < ApplicationController
 
   def show
     @products = Product.count
-    puts "number of products, #{@products}" 
     @categories = Category.count
-    puts "number of categories, #{@categories}" 
     @category = Category.all
-    p @category
   end
 end
