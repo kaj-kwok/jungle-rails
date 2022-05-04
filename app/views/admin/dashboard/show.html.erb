@@ -1,2 +1,21 @@
 <h1>Admin::Dashboard#show</h1>
 <p>Find me in app/views/admin/dashboard/show.html.erb</p>
+
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>Number of Products</th>
+      <th>Number of Catgories</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><%= link_to @products, admin_products_path %></td>
+      <td><%= @categories %>: 
+        <% @category.each do |c| %>
+          <%= link_to c.name, category_path(c.id)%>
+        <% end %>
+      </td>
+    <tr>
+  </tbody>
+</table>
