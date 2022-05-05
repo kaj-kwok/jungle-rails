@@ -1,5 +1,6 @@
 
 <header class="<%= current_page?(root_path) ? "hero" : "hero small" %>">
+
   <section class="title">
     <h3>Welcome to</h3>
     <h1>The Jungle</h1>
@@ -66,6 +67,13 @@
         <li class="nav-item end-0">
           <%= link_to cart_path, class: "nav-link " do %> <%= fa_icon "shopping-cart" %>
           My Cart (<%= cart.size %>) <% end %>
+        </li>
+        <li>
+          <% if current_user %>
+            <span class="d-flex align-items-center">Signed in as <%= current_user.name %> | <%= link_to "Logout", '/logout', class: "nav-link " %></span>
+          <% else %>
+            <span class="d-flex align-items-center"><%= link_to 'Login', '/login', class: "nav-link " %> | <%= link_to 'Signup', '/signup', class: "nav-link " %></span>
+          <% end %>
         </li>
       </ul>
     </div>
