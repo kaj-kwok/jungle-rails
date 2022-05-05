@@ -10,10 +10,7 @@
   <tbody>
     <tr>
       <td><%= link_to @products, admin_products_path %></td>
-      <td><%= @categories %>: 
-        <% @category.each do |c| %>
-          <%= link_to c.name, category_path(c.id)%>
-        <% end %>
+      <td><%= link_to @categories, admin_categories_path %>
       </td>
     <tr>
   </tbody>
