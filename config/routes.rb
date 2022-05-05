@@ -20,6 +20,7 @@ Rails.application.routes.draw do
     root to: 'dashboard#show'
     resources :products, except: [:edit, :update, :show]
     resources :categories, only: [:index, :create, :new]
+    resources :sales, only: [:index, :new]
   end
 
   #routes for login form, login in/log out
