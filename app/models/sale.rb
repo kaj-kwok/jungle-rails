@@ -9,7 +9,7 @@ class Sale < ApplicationRecord
   end
 
   def upcoming?
-    ends_on > Date.current
+    ends_on > Date.current && starts_on > Date.current
   end
 
 end
