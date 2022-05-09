@@ -1,5 +1,4 @@
-class Admin::DashboardController < ApplicationController
-  http_basic_authenticate_with name: ENV['AUTHENTICATION_USERNAME'], password: ENV['AUTHENTICATION_PASSWORD']
+class Admin::DashboardController < Admin::BaseController
 
   def show
     @products = Product.count

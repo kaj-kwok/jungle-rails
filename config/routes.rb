@@ -19,7 +19,9 @@ Rails.application.routes.draw do
   namespace :admin do
     root to: 'dashboard#show'
     resources :products, except: [:edit, :update, :show]
+    #added a destroy route for categories
     resources :categories, only: [:index, :create, :new, :destroy]
+    #added routes for admin sales 
     resources :sales, only: [:index, :new]
   end
 
