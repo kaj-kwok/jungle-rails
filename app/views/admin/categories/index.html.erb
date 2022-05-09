@@ -10,14 +10,19 @@
     <table class="table table-bordered">
       <thead>
         <tr>
-          <th>Categories</th>
+          <th style="width: 75%">Categories</th>
+          <th style="width: 20%">Number of Products</th>
         </tr>
+          
       </thead>
       <tbody>
-        <% @categories.each do |category|%>
+        <% @categories.each do | category|%>
         <tr>
           <td>
           <%= category.name %>
+          </td>
+          <td>
+          <%= category.number_of_products %>
           </td>
           <td>
           <%= link_to fa_icon('trash'), [:admin, category], class: 'btn btn-sm btn-danger', method: :delete, data: { confirm: "Are you sure?" } %>
