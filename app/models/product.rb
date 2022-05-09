@@ -8,4 +8,9 @@ class Product < ApplicationRecord
   validates :price, presence: true
   validates :quantity, presence: true
   validates :category, presence: true
+
+  def has_quantity?
+    quantity > 1
+  end
+  
 end
