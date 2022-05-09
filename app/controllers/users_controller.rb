@@ -9,7 +9,7 @@ class UsersController < ApplicationController
         session[:user_id] = user.id
         redirect_to "/"
       else
-        redirect_to "/signup"
+        redirect_to "/signup", flash: { error: user.errors.full_messages.first }
       end
   end
   
