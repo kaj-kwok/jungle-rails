@@ -217,6 +217,12 @@ cat3.products.create!({
   price: 79.99
 })
 
+puts "entering sales"
+
+Sale.create!({name: "X-mas sale", percent_off: 40, starts_on: 'Dec 5, 2023', ends_on: 'Jan 20, 2024'})
+Sale.create!({name: "Ended sale", percent_off: 20, starts_on: 'Dec 5, 2020', ends_on: 'Jan 20, 2021'})
+Sale.create!({name: "Summer sale", percent_off: 80, starts_on: 'Apr 20, 2022', ends_on: 'Aug 1, 2022'})
+
 
 puts "DONE!"
 
