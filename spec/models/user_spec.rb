@@ -57,4 +57,28 @@ RSpec.describe User, type: :model do
     end
   end
   
+  describe "Login validation" do
+
+    before do
+      @testuser = User.create!({first_name: "Ted", last_name: "David",email: "test@test.com", password: "rrrrrrr", password_confirmation: "rrrrrrr"})
+    end
+    
+      it "validates if email and password are correct" do
+        user = User.authenticate_with_credentials('test@test.com', 'rrrrrrr')
+        expect(user).to eq(@testuser)
+      end
+      it "returns nil if email/pass do not match" do
+        user = User.authenticate_with_credentials('test@test.com', 'rrrrrr')
+        expect(user).to be_nil
+      end
+      it "should return user if email has extra spacing" do
+        user = User.authenticate_with_credentials('   test@test.com  ', 'rrrrrrr')
+        expect(user).to eq(@testuser)
+      end
+      it "should return user if email is different case " do
+        user = User.authenticate_with_credentials('TEST@test.com', 'rrrrrrr')
+        expect(user).to eq(@testuser)
+      end
+  end
+  
 end
