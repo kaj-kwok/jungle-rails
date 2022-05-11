@@ -1,4 +1,4 @@
-describe("", () => {
+describe("jungle app", () => {
   beforeEach(() => {
     cy.visit('localhost:3001');
   })

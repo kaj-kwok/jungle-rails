@@ -5,6 +5,8 @@ return unless Rails.env.test?
 
 CypressRails.hooks.before_server_start do
   # Called once, before either the transaction or the server is started
+  DatabaseCleaner.start
+  DatabaseCleaner.clean
   cat1 = Category.find_or_create_by! name: 'Evergreens'
 
   cat1.products.create!({
@@ -35,6 +37,7 @@ end
 
 CypressRails.hooks.before_server_stop do
   # Called once, at_exit
+  DatabaseCleaner.start
   DatabaseCleaner.clean
 end
 
