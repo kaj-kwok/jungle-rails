@@ -9,10 +9,15 @@
       <h1><%= @product.name %></h1>
       <p><%= @product.description %></p>
       <div class="quantity">
+      <h5> Average Rating <%= render 'avgstars', value: @product.average_rating.to_i %></h5>
         <span><%= @product.quantity %> in stock at </span>
         <span><%= humanized_money_with_symbol @product.price %></span>
       </div>
+      <div>
+        
+      </div>
       <div class="price"> 
+      
         <% unless @product.has_quantity? %>
         <div class="px-4 py-2 badge bg-danger align-items-center"><%= "Sold Out"%></div>
        
@@ -23,6 +28,15 @@
         <% end %>     
         </div>
       </div>
+    </div>
+    <div class="reviews"> 
+      <% @product.reviews.each do |review| %>
+      <div class="card">
+        <p>Rating <%= review.rating %></p>
+        <p><%= review.description %></p>
+        <p>by <%= review.user.first_name%> <%= review.user.last_name%></p>
+      </div>
+      <% end %>
     </div>
   </article>
 

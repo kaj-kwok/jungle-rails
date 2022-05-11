@@ -231,6 +231,7 @@ User.create!(first_name: "Eric", last_name: "Lee", email: "test2@test.com", pass
 puts "created reviews"
 
 Review.create!(product_id: 1, user_id: 1, description: "Hello Hello Hello Hello Hello", rating: 5)
+Review.create!(product_id: 1, user_id: 2, description: "Black knight", rating: 4)
 Review.create!(product_id: 2, user_id: 2, description: "This is a plant", rating: 1)
 Review.create!(product_id: 3, user_id: 3, description: "A shrubbery", rating: 3)
 

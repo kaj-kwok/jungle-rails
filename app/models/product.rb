@@ -13,5 +13,14 @@ class Product < ApplicationRecord
   def has_quantity?
     quantity > 1
   end
+
+  def average_rating
+    if reviews.count != 0
+    reviews.sum(:rating) / reviews.count
+    else
+      0
+    end
+  end
+  
   
 end
