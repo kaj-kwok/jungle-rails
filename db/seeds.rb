@@ -223,6 +223,16 @@ Sale.create!({name: "X-mas sale", percent_off: 40, starts_on: 'Dec 5, 2023', end
 Sale.create!({name: "Ended sale", percent_off: 20, starts_on: 'Dec 5, 2020', ends_on: 'Jan 20, 2021'})
 Sale.create!({name: "Summer sale", percent_off: 80, starts_on: 'Apr 20, 2022', ends_on: 'Aug 1, 2022'})
 
+puts "creating users"
+User.create!(first_name: "David", last_name: "Lee", email: "test@test.com", password_digest: "test1234")
+User.create!(first_name: "Steve", last_name: "Lee", email: "test1@test.com", password_digest: "test1234")
+User.create!(first_name: "Eric", last_name: "Lee", email: "test2@test.com", password_digest: "test1234")
+
+puts "created reviews"
+
+Review.create!(product_id: 1, user_id: 1, description: "Hello Hello Hello Hello Hello", rating: 5)
+Review.create!(product_id: 2, user_id: 2, description: "This is a plant", rating: 1)
+Review.create!(product_id: 3, user_id: 3, description: "A shrubbery", rating: 3)
 
 puts "DONE!"
 
