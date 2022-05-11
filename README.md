@@ -1,6 +1,13 @@
 # Jungle
 
-A mini e-commerce application built with Rails 6.1 for purposes of teaching Rails by example.
+A mini e-commerce application built with Rails 6.1 for purposes of teaching Rails by example. Inherited a basic framework in an unfamiliar language and tasked to add in additional features and guards.
+
+## Project Goals
+* Become familiar with Ruby and the Rails framework
+* Learn how to navigate an existing code-base
+* Use existing code style and approach to implement new features in unfamiliar territory
+* Apply previous learning tactics to research and become familiar with a new paradigm, language and framework
+* A simulation of the real world where feature and bug-fix requests are listed instead of step-by-step instructions on how to implement a solution
 
 ## Setup
 
@@ -19,13 +26,18 @@ If Rails is complaining about authentication to the database, uncomment the user
 
 ## Stripe Testing
 
-Use Credit Card # 4111 1111 1111 1111 for testing success scenarios.
-
 More information in their docs: <https://stripe.com/docs/testing#cards>
 
 ## Dependencies
 
+- Ruby 3.1.1
 - Rails 6.1 [Rails Guide](http://guides.rubyonrails.org/v6.1/)
 - Bootstrap 5
 - PostgreSQL 9.x
 - Stripe
+- bcrypt
+- money-rails
+- bootstrap
+- font-awesome-rails
+- webpacker
+- jquery-rails

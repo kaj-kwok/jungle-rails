@@ -9,7 +9,7 @@ class User < ApplicationRecord
   def self.authenticate_with_credentials(email, password)
     email = email.strip
     user = where("email = ?", email.downcase).first
-    if user.authenticate(password)
+    if user != nil && user.authenticate(password)
       user
     else
       nil
