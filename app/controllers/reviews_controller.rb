@@ -1,4 +1,5 @@
 class ReviewsController < ApplicationController
+  before_action :current_user, only: [:create, :delete]
 
   def create
     
@@ -12,6 +13,13 @@ class ReviewsController < ApplicationController
       redirect_to product_path(@product)
     end
   end
+
+  def destroy
+    @review = Review.find(params[:id])
+    @review.destroy
+    redirect_to product_path(params[:product_id])
+  end
+  
 
   private
 
