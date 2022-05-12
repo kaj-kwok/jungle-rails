@@ -6,7 +6,9 @@ Rails.application.routes.draw do
   get 'static_pages/about'
   root to: 'products#index'
 
-  resources :products, only: [:index, :show]
+  resources :products, only: [:index, :show] do
+    resource :reviews, only: [:create]
+  end
   resources :categories, only: [:show]
 
   resource :cart, only: [:show] do

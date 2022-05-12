@@ -2,6 +2,11 @@
 
 A mini e-commerce application built with Rails 6.1 for purposes of teaching Rails by example. Inherited a basic framework in an unfamiliar language and tasked to add in additional features and guards.
 
+![Main Page](docs\main-page.png)
+![Sold out Badge](docs\sold-out-badges.png)
+![Cart](docs\cart.png)
+![Admin sales](docs\admin_sales.png)
+
 ## Project Goals
 * Become familiar with Ruby and the Rails framework
 * Learn how to navigate an existing code-base
