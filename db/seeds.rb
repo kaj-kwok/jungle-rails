@@ -227,6 +227,7 @@ puts "creating users"
 User.create!(first_name: "David", last_name: "Lee", email: "test@test.com", password_digest: "test1234")
 User.create!(first_name: "Steve", last_name: "Lee", email: "test1@test.com", password_digest: "test1234")
 User.create!(first_name: "Eric", last_name: "Lee", email: "test2@test.com", password_digest: "test1234")
+User.create!(first_name: "Rion", last_name: "Pol", email: "test4@test.com", password_digest: "$2a$12$51L4VdTKq20tDcGZkwLEyOKGK7B13S1K.UzxC/pF6a2V1DgT4V5Te")
 
 puts "created reviews"
 
