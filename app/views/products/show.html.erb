@@ -31,7 +31,9 @@
     </div>
 
     <div class="reviews-wrapper">
+    <% if current_user %>
       <div class="reviews-form">
+      <h3>Write a Review!</h3>
         <%= form_for [@product, @review] do |f| %>
           <div class="form-group">
             <%= f.label :description %>
@@ -45,6 +47,7 @@
           <%= f.submit 'Create Review', class: 'btn btn-primary' %>
         <% end %>
       </div>
+      <% end %>
       <div class="reviews"> 
         <% @product.reviews.reverse.each do |review| %>
         <div class="card">
